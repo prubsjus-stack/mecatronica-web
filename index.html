@@ -1,138 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página web informativa sobre Ingeniería Mecatrónica: qué es, campos de aplicación y perspectivas profesionales.">
-  <title>Ingeniería Mecatrónica | Información y Proyectos</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Página web sobre la Ingeniería Mecatrónica: la sinergia entre mecánica, electrónica, control e informática.">
+<title>Ingeniería Mecatrónica | Ingeniería del futuro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="intro-lock">
 
-  <!-- NAVEGACIÓN -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#inicio" class="brand">⚙️ Mecatrónica</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-menu" id="navMenu">
-        <a href="#inicio">Inicio</a>
-        <a href="#que-es">¿Qué es?</a>
-        <a href="#areas">Áreas</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="icG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset=".5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ===== INTRO ÉPICA ===== -->
+<div id="intro">
+  <div class="scan"></div>
+  <div class="flash"></div>
+  <div class="wrap">
+    <div class="kick">⚙️ Bienvenido al futuro de la ingeniería</div>
+    <h1 id="intro-name">INGENIERÍA MECATRÓNICA</h1>
+    <div class="tag">De las máquinas inteligentes a la automatización industrial</div>
+    <div class="btn"><button id="intro-go">ENTRAR</button></div>
+  </div>
+  <div class="bar"><i></i></div>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="aurora"><span></span><span></span><span></span></div>
+<div class="grid-overlay"></div>
+<div id="scroll-progress"></div>
+
+<!-- ===== NAVEGACIÓN ===== -->
+<nav id="nav">
+  <a href="#inicio" class="active">Inicio</a>
+  <a href="#que-es">¿Qué es?</a>
+  <a href="#pilares">Pilares</a>
+  <a href="#areas">Áreas</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header id="inicio">
+  <div class="shapes">
+    <span class="shape cube"></span>
+    <span class="shape ring"></span>
+    <span class="shape tri"></span>
+    <span class="shape py"></span>
+  </div>
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span>INGENIERÍA MECATRÓNICA ⚙️ 2026</div>
+    <h1>EL FUTURO SE<br><span class="glow-txt">CONSTRUYE</span> AQUÍ</h1>
+    <div class="subtitle">Mecánica <b>·</b> Electrónica <b>·</b> Control <b>·</b> Informática</div>
+    <div class="type-line"><span id="typed"></span><span class="cursor">▊</span></div>
+    <div class="student-card">
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
+        <div><b>Disciplina</b>Multi-ingeniería</div>
+      </div>
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <div><b>Enfoque</b>Automatización</div>
+      </div>
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v3M15 3v3M3 9h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
+        <div><b>Futuro</b>Industria 4.0</div>
+      </div>
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><b>Visión</b>Sistemas inteligentes</div>
+      </div>
     </div>
-  </header>
+  </div>
+  <div class="scroll-hint">Desliza <div class="mouse"></div></div>
+</header>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="container hero-content">
-      <h1>Ingeniería <span class="accent">Mecatrónica</span></h1>
-      <p>La sinergia entre la mecánica, la electrónica, el control y la informática para diseñar máquinas inteligentes que transforman la industria.</p>
-      <a href="#que-es" class="btn">Conoce más</a>
+<main>
+
+  <!-- ===== QUÉ ES ===== -->
+  <section class="section" id="que-es">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <div>
+        <span class="tag">Introducción</span>
+        <h2>¿Qué es la Ingeniería Mecatrónica?</h2>
+      </div>
+      <div class="section-line"></div>
     </div>
-  </section>
 
-  <!-- QUÉ ES -->
-  <section id="que-es" class="section">
-    <div class="container">
-      <h2 class="section-title">¿Qué es la Mecatrónica?</h2>
-      <p class="lead">
-        La <strong>ingeniería mecatrónica</strong> integra cuatro disciplinas fundamentales para crear sistemas
-        inteligentes y automatizados: <strong>mecánica</strong>, <strong>electrónica</strong>,
-        <strong>teoría de control</strong> e <strong>informática</strong>.
+    <div class="card">
+      <h3><span class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="url(#icG)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="q-num">i</span>La sinergia de cuatro ciencias</h3>
+      <p>
+        La <strong style="color:var(--text)">Ingeniería Mecatrónica</strong> es una disciplina que integra de forma sinérgica la
+        <strong style="color:var(--text)">mecánica</strong>, la <strong style="color:var(--text)">electrónica</strong>, la
+        <strong style="color:var(--text)">teoría de control</strong> y la <strong style="color:var(--text)">informática</strong>
+        para diseñar, construir y operar sistemas inteligentes y automatizados.
       </p>
-      <div class="grid">
-        <div class="card">
-          <span class="icon">🔩</span>
-          <h3>Mecánica</h3>
-          <p>Diseño estructural y de mecanismos, materiales y movimiento de sistemas.</p>
-        </div>
-        <div class="card">
-          <span class="icon">⚡</span>
-          <h3>Electrónica</h3>
-          <p>Sensores, actuadores, microcontroladores y electrónica de potencia.</p>
-        </div>
-        <div class="card">
-          <span class="icon">🕹️</span>
-          <h3>Control</h3>
-          <p>Teoría de control y automatización para gobernar el comportamiento de los sistemas.</p>
-        </div>
-        <div class="card">
-          <span class="icon">💻</span>
-          <h3>Informática</h3>
-          <p>Programación, inteligencia artificial, visión artificial y comunicaciones.</p>
-        </div>
+      <div class="answer">
+        Su objetivo es crear <strong>máquinas y procesos que perciben su entorno</strong>, toman decisiones y actúan de forma autónoma o semiautónoma, mejorando la eficiencia de la industria y la vida cotidiana.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="url(#icG)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M8 5h8M6 3v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3M6 15v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2Z"/></svg></span><span class="q-num">+</span>¿Por qué es el futuro?</h3>
+      <ul class="list-tick">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Es el motor de la <strong style="color:var(--text)">Industria 4.0</strong>: fábricas inteligentes, robótica y automatización.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une el <strong style="color:var(--text)">mundo físico y digital</strong> mediante sensores y sistemas de control.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Alta <strong style="color:var(--text)">demanda laboral</strong> y gran versatilidad profesional.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Impulsa la innovación en <strong style="color:var(--text)">robotica, IA y energías renovables</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== PILARES ===== -->
+  <section class="section" id="pilares">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <div>
+        <span class="tag">Fundamentos</span>
+        <h2>Los 4 pilares de la mecatrónica</h2>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="feature-grid">
+      <div class="fcard">
+        <span class="ficon">🔩</span>
+        <h3>Mecánica</h3>
+        <p>Diseño de estructuras, mecanismos, materiales y transmisión de movimiento.</p>
+      </div>
+      <div class="fcard">
+        <span class="ficon">⚡</span>
+        <h3>Electrónica</h3>
+        <p>Sensores, actuadores, microcontroladores y electrónica de potencia.</p>
+      </div>
+      <div class="fcard">
+        <span class="ficon">🕹️</span>
+        <h3>Control</h3>
+        <p>Teoría de control y automatización para gobernar el comportamiento de los sistemas.</p>
+      </div>
+      <div class="fcard">
+        <span class="ficon">💻</span>
+        <h3>Informática</h3>
+        <p>Programación, inteligencia artificial, visión artificial y comunicaciones.</p>
       </div>
     </div>
   </section>
 
-  <!-- ÁREAS -->
-  <section id="areas" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Campos de aplicación</h2>
-      <div class="grid areas">
-        <div class="area"><h3>🤖 Robótica</h3><p>Robots industriales, móviles y de servicio.</p></div>
-        <div class="area"><h3>🏭 Automatización</h3><p>Líneas de producción y control de procesos.</p></div>
-        <div class="area"><h3>🚗 Sistemas automotrices</h3><p>Vehículos autónomos y electrónica del automóvil.</p></div>
-        <div class="area"><h3>✈️ Aeroespacial</h3><p>Sistemas de navegación y control de vuelo.</p></div>
-        <div class="area"><h3>⚕️ Biomedicina</h3><p>Prótesis, biónica y equipos médicos.</p></div>
-        <div class="area"><h3>🔋 Energía</h3><p>Energías renovables y eficiencia energética.</p></div>
+  <!-- ===== ÁREAS ===== -->
+  <section class="section" id="areas">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <div>
+        <span class="tag">Aplicación</span>
+        <h2>Campos de aplicación</h2>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="mini-grid">
+      <div class="mini"><span class="num">01</span><span class="lbl">Robótica<br>industrial y móvil</span></div>
+      <div class="mini"><span class="num">02</span><span class="lbl">Automatización<br>de procesos</span></div>
+      <div class="mini"><span class="num">03</span><span class="lbl">Sistemas<br>automotrices</span></div>
+      <div class="mini"><span class="num">04</span><span class="lbl">Aeroespacial<br>y navegación</span></div>
+      <div class="mini"><span class="num">05</span><span class="lbl">Biomedicina<br>y prótesis</span></div>
+      <div class="mini"><span class="num">06</span><span class="lbl">Energías<br>renovables</span></div>
+    </div>
+  </section>
+
+  <!-- ===== PROYECTOS ===== -->
+  <section class="section" id="proyectos">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <div>
+        <span class="tag">Proyectos</span>
+        <h2>Proyectos destacados</h2>
+      </div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="feature-grid">
+      <div class="fcard">
+        <div class="preview" style="background:linear-gradient(135deg,rgba(34,211,238,.25),rgba(167,139,250,.2))">🤖</div>
+        <h3>Brazo robótico</h3>
+        <p>Brazo automatizado para líneas de ensamblaje con control en tiempo real.</p>
+      </div>
+      <div class="fcard">
+        <div class="preview" style="background:linear-gradient(135deg,rgba(167,139,250,.25),rgba(244,114,182,.2))">🚗</div>
+        <h3>Robots autónomos</h3>
+        <p>Vehículos móviles con sensores de distancia y navegación autónoma.</p>
+      </div>
+      <div class="fcard">
+        <div class="preview" style="background:linear-gradient(135deg,rgba(244,114,182,.25),rgba(34,211,238,.2))">☀️</div>
+        <h3>Energía inteligente</h3>
+        <p>Sistemas de seguimiento solar para optimizar la generación energética.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="section">
-    <div class="container">
-      <h2 class="section-title">Proyectos destacados</h2>
-      <div class="grid proyectos">
-        <article class="proyecto">
-          <div class="proyecto-img" style="background-color:#2563eb"></div>
-          <h3>Brazo robótico</h3>
-          <p>Brazo automatizado para líneas de ensamblaje con control en tiempo real.</p>
-        </article>
-        <article class="proyecto">
-          <div class="proyecto-img" style="background-color:#16a34a"></div>
-          <h3>Robot seguidor de línea</h3>
-          <p>Vehículo autónomo con microcontrolador y sensores de distancia.</p>
-        </article>
-        <article class="proyecto">
-          <div class="proyecto-img" style="background-color:#dc2626"></div>
-          <h3>Panel solar inteligente</h3>
-          <p>Sistema de seguimiento solar para optimizar la generación de energía.</p>
-        </article>
+  <!-- ===== CONTACTO ===== -->
+  <section class="section" id="contacto">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <div>
+        <span class="tag">Contacto</span>
+        <h2>¿Hablamos de tu proyecto?</h2>
       </div>
+      <div class="section-line"></div>
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="lead">¿Tienes un proyecto o quieres saber más?</p>
+    <div class="card">
+      <h3><span class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="url(#icG)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="q-num">✉</span>Escríbenos</h3>
       <form class="form" id="contactForm">
         <input type="text" id="nombre" placeholder="Nombre" required>
         <input type="email" id="email" placeholder="Correo electrónico" required>
         <textarea id="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
+        <button type="submit" class="f-cta">ENVIAR MENSAJE</button>
       </form>
-      <p class="form-ok" id="formOk" hidden>¡Gracias! Tu mensaje ha sido recibido.</p>
+      <p class="form-ok" id="formOk" hidden>¡Gracias! Tu mensaje ha sido recibido. ✅</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Ingeniería Mecatrónica. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+</main>
 
-  <script src="js/main.js"></script>
+<footer>
+  <div class="f-rule"></div>
+  <div class="f-name">Ingeniería Mecatrónica</div>
+  <p class="f-sub">Mecánica · Electrónica · Control · Informática ⚙️ 2026</p>
+</footer>
+
+<button id="to-top" aria-label="Volver arriba">&#8593;</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
