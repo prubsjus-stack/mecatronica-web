@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página web informativa sobre Ingeniería Mecatrónica: qué es, campos de aplicación y perspectivas profesionales.">
+  <title>Ingeniería Mecatrónica | Información y Proyectos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand">⚙️ Mecatrónica</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio">Inicio</a>
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#areas">Áreas</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container hero-content">
+      <h1>Ingeniería <span class="accent">Mecatrónica</span></h1>
+      <p>La sinergia entre la mecánica, la electrónica, el control y la informática para diseñar máquinas inteligentes que transforman la industria.</p>
+      <a href="#que-es" class="btn">Conoce más</a>
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section id="que-es" class="section">
+    <div class="container">
+      <h2 class="section-title">¿Qué es la Mecatrónica?</h2>
+      <p class="lead">
+        La <strong>ingeniería mecatrónica</strong> integra cuatro disciplinas fundamentales para crear sistemas
+        inteligentes y automatizados: <strong>mecánica</strong>, <strong>electrónica</strong>,
+        <strong>teoría de control</strong> e <strong>informática</strong>.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <span class="icon">🔩</span>
+          <h3>Mecánica</h3>
+          <p>Diseño estructural y de mecanismos, materiales y movimiento de sistemas.</p>
+        </div>
+        <div class="card">
+          <span class="icon">⚡</span>
+          <h3>Electrónica</h3>
+          <p>Sensores, actuadores, microcontroladores y electrónica de potencia.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🕹️</span>
+          <h3>Control</h3>
+          <p>Teoría de control y automatización para gobernar el comportamiento de los sistemas.</p>
+        </div>
+        <div class="card">
+          <span class="icon">💻</span>
+          <h3>Informática</h3>
+          <p>Programación, inteligencia artificial, visión artificial y comunicaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS -->
+  <section id="areas" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Campos de aplicación</h2>
+      <div class="grid areas">
+        <div class="area"><h3>🤖 Robótica</h3><p>Robots industriales, móviles y de servicio.</p></div>
+        <div class="area"><h3>🏭 Automatización</h3><p>Líneas de producción y control de procesos.</p></div>
+        <div class="area"><h3>🚗 Sistemas automotrices</h3><p>Vehículos autónomos y electrónica del automóvil.</p></div>
+        <div class="area"><h3>✈️ Aeroespacial</h3><p>Sistemas de navegación y control de vuelo.</p></div>
+        <div class="area"><h3>⚕️ Biomedicina</h3><p>Prótesis, biónica y equipos médicos.</p></div>
+        <div class="area"><h3>🔋 Energía</h3><p>Energías renovables y eficiencia energética.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <h2 class="section-title">Proyectos destacados</h2>
+      <div class="grid proyectos">
+        <article class="proyecto">
+          <div class="proyecto-img" style="background-color:#2563eb"></div>
+          <h3>Brazo robótico</h3>
+          <p>Brazo automatizado para líneas de ensamblaje con control en tiempo real.</p>
+        </article>
+        <article class="proyecto">
+          <div class="proyecto-img" style="background-color:#16a34a"></div>
+          <h3>Robot seguidor de línea</h3>
+          <p>Vehículo autónomo con microcontrolador y sensores de distancia.</p>
+        </article>
+        <article class="proyecto">
+          <div class="proyecto-img" style="background-color:#dc2626"></div>
+          <h3>Panel solar inteligente</h3>
+          <p>Sistema de seguimiento solar para optimizar la generación de energía.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="lead">¿Tienes un proyecto o quieres saber más?</p>
+      <form class="form" id="contactForm">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <textarea id="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <p class="form-ok" id="formOk" hidden>¡Gracias! Tu mensaje ha sido recibido.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Ingeniería Mecatrónica. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
