@@ -19,7 +19,7 @@ words.forEach((w, wi) => {
 });
 
 function confettiBurst() {
-  const CONF_COLORS = ['#22d3ee', '#a78bfa', '#f472b6', '#e879f9', '#f6b93b', '#66bb6a', '#ffffff'];
+  const CONF_COLORS = ['#2de2ff', '#1d9fd4', '#ffb020', '#ff7a5c', '#e5484d', '#66bb6a', '#ffffff'];
   for (let i = 0; i < 120; i++) {
     const c = document.createElement('i');
     c.className = 'confetti';
@@ -54,7 +54,7 @@ addEventListener('scroll', () => {
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let W, H, pts = [];
-const COLORS = ['34,211,238', '167,139,250', '244,114,182', '232,121,249'];
+const COLORS = ['45,226,255', '29,159,212', '255,176,32', '229,72,77'];
 function resize() {
   W = canvas.width = innerWidth;
   H = canvas.height = innerHeight;
@@ -88,7 +88,7 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(pts[i].x, pts[i].y);
         ctx.lineTo(pts[j].x, pts[j].y);
-        ctx.strokeStyle = `rgba(139,92,246,${(1 - d / 130) * .16})`;
+        ctx.strokeStyle = `rgba(29,159,212,${(1 - d / 130) * .16})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -100,9 +100,9 @@ draw();
 
 // ---------- Typewriter ----------
 const phrases = [
-  'Sistemas inteligentes que revolucionan la industria…',
-  'Robótica, automatización, IA y control en tiempo real…',
-  'Donde la mecánica, la electrónica y la informática se encuentran.',
+  'Máquinas inteligentes que revolucionan la industria…',
+  'Robótica, automatización, control y sistemas embebidos…',
+  'Donde la mecánica, la electrónica y el software se unen.',
 ];
 let pi = 0, ci = 0, deleting = false;
 const typedEl = document.getElementById('typed');
@@ -122,13 +122,19 @@ function type() {
 }
 setTimeout(type, 700);
 
-// ---------- Reveal on scroll ----------
+// ---------- Reveal on scroll + barras ----------
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
-    if (e.isIntersecting) e.target.classList.add('in-view');
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+      e.target.querySelectorAll('.bar-fill').forEach((b) => {
+        const v = e.target.dataset.val || 5;
+        setTimeout(() => (b.style.width = (v / 5 * 100) + '%'), 200);
+      });
+    }
   });
 }, { threshold: .12 });
-document.querySelectorAll('.card, .fcard').forEach((c) => io.observe(c));
+document.querySelectorAll('.card').forEach((c) => io.observe(c));
 
 // ---------- Nav active state ----------
 const navLinks = document.querySelectorAll('#nav a');
@@ -158,7 +164,7 @@ if (matchMedia('(pointer:fine)').matches) {
     requestAnimationFrame(loop);
   })();
   document.addEventListener('mouseover', (e) => {
-    ring.classList.toggle('grow', !!e.target.closest('a,button,.card,.fcard,.mini,.opt'));
+    ring.classList.toggle('grow', !!e.target.closest('a,button,.card,.mini,.opt'));
   });
   document.addEventListener('mouseleave', () => ring.classList.add('hide'));
   document.addEventListener('mouseenter', () => ring.classList.remove('hide'));
@@ -171,9 +177,31 @@ addEventListener('scroll', () => {
 });
 toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
+// ---------- Sección final (anillo de valoración) ----------
+const finalSec = document.getElementById('final');
+const finalIO = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+      setTimeout(() => {
+        document.querySelector('.final .ring .fill').style.strokeDashoffset = 0;
+        const v = document.getElementById('final-val');
+        let n = 0;
+        const iv = setInterval(() => {
+          n += .1;
+          v.textContent = (Math.round(n * 10) / 10).toFixed(1);
+          if (n >= 5) { clearInterval(iv); v.textContent = '5.0'; }
+        }, 45);
+      }, 300);
+      finalIO.unobserve(e.target);
+    }
+  });
+}, { threshold: .4 });
+finalIO.observe(finalSec);
+
 // ---------- Tarjetas con inclinación 3D ----------
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('.card, .fcard').forEach((card) => {
+  document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
       const rotY = ((e.clientX - r.left) / r.width - .5) * 9;
@@ -185,14 +213,3 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
     });
   });
 }
-
-// ---------- Formulario de contacto (demo) ----------
-const form = document.getElementById('contactForm');
-const formOk = document.getElementById('formOk');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formOk.hidden = false;
-  formOk.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  form.reset();
-  setTimeout(() => { formOk.hidden = true; }, 4000);
-});
