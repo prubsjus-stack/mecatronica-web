@@ -208,12 +208,13 @@ main{max-width:1120px;margin:0 auto;padding:20px 18px 90px}
 
 /* ===== Tarjetas ===== */
 .card{
-  background:var(--card);border:1px solid var(--card-border);
+  background:var(--card);border:1px solid var(--card-border);border-radius:22px;
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   padding:28px;margin-bottom:18px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
   opacity:0;transform:translateY(36px);
-  position:relative;
+  position:relative;display:flex;flex-direction:column;
 }
+.card>.drawing{order:50;margin-top:22px}
 .card.in-view{opacity:1;transform:none}
 .card:hover{border-color:rgba(79,216,255,.4);box-shadow:0 18px 48px rgba(0,0,0,.45)}
 .card h3{font-family:var(--font-head);font-size:1.12rem;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:14px}
@@ -230,12 +231,13 @@ main{max-width:1120px;margin:0 auto;padding:20px 18px 90px}
   border-radius:0 12px 12px 0;color:var(--text);margin-top:6px}
 
 /* ===== Espacio de imagen (drawing) ===== */
-.drawing{width:100%;margin:18px 0 22px;border-radius:16px;overflow:hidden;position:relative;
-  background:rgba(255,255,255,.02);border:1px dashed rgba(79,216,255,.35);
-  display:flex;align-items:center;justify-content:center;min-height:120px;}
-.drawing img{display:block;width:auto;max-width:100%;height:auto;max-height:540px;object-fit:contain;margin:auto;border:none;}
-.drawing .ph{color:var(--muted);font-size:.85rem;letter-spacing:1px;text-transform:uppercase;font-family:var(--font-head)}
-.drawing.has-img{border-style:solid;border-color:var(--card-border);background:rgba(255,255,255,.03)}
+.drawing{width:100%;margin:18px 0 22px;border-radius:16px;overflow:hidden;
+  background:#fbf3e4;position:relative;box-shadow:0 8px 26px rgba(0,0,0,.4),inset 0 0 0 1px rgba(0,0,0,.06)}
+.drawing::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(rgba(120,90,40,.06) 1px,transparent 1px);background-size:22px 22px}
+.drawing img{display:block;width:100%;height:auto;border:none;object-fit:contain;max-width:62%;margin:0 auto;max-height:540px;}
+.drawing .ph{position:relative;color:#8a6d3b;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;font-family:var(--font-head);padding:40px 0}
+.drawing.has-img{border-style:none;background:#fbf3e4}
 .drawing.has-img .ph{display:none}
 
 /* ===== Lista ===== */
@@ -350,6 +352,6 @@ body.cursor-on,body.cursor-on *{cursor:none}
   .card h3 .icon-box{width:40px;height:40px}
   .card h3 .icon-box svg{width:21px;height:21px}
   .card h3 .q-num{width:30px;height:30px;font-size:.72rem}
-  .drawing img{max-height:380px}
+  .drawing img{max-width:92%;max-height:380px}
   .scale5 i{width:38px;height:38px}
 }
