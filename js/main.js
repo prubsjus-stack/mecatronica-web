@@ -184,13 +184,13 @@ const finalIO = new IntersectionObserver((entries) => {
     if (e.isIntersecting) {
       e.target.classList.add('in-view');
       setTimeout(() => {
-        document.querySelector('.final .ring .fill').style.strokeDashoffset = 0;
+        document.querySelector('.final .ring .fill').style.strokeDashoffset = '339.29';
         const v = document.getElementById('final-val');
         let n = 0;
         const iv = setInterval(() => {
-          n += .1;
-          v.textContent = (Math.round(n * 10) / 10).toFixed(1);
-          if (n >= 5) { clearInterval(iv); v.textContent = '5.0'; }
+          n += .04;
+          v.textContent = (Math.round(n * 100) / 100).toFixed(1);
+          if (n >= 2) { clearInterval(iv); v.textContent = '2.0'; }
         }, 45);
       }, 300);
       finalIO.unobserve(e.target);
