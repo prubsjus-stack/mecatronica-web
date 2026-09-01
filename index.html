@@ -44,6 +44,49 @@
 <div class="scanlines"></div>
 <div id="scroll-progress"></div>
 
+<!-- ===== HOLOGRAMAS DE FONDO (mecatrónica) ===== -->
+<div class="holograms" aria-hidden="true">
+  <div class="hologram h-robot" data-depth="1">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="20" y="30" width="24" height="18" rx="3"/>
+      <rect x="27" y="18" width="10" height="12"/>
+      <circle cx="30" cy="24" r="1.4"/><circle cx="34" cy="24" r="1.4"/>
+      <circle cx="32" cy="39" r="3"/>
+      <path d="M20 34h-8a3 3 0 0 0-3 3M44 34h8a3 3 0 0 1 3 3M22 48l-3 6M42 48l3 6"/>
+    </svg>
+  </div>
+  <div class="hologram h-gear" data-depth="2">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="32" r="12"/>
+      <path d="M32 8v8M32 48v8M8 32h8M48 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/>
+    </svg>
+  </div>
+  <div class="hologram h-chip" data-depth="3">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="20" y="20" width="24" height="24" rx="3"/>
+      <path d="M32 20v-8M32 52v-8M20 32H8M56 32h-8M17 32v-6l-5 2M17 32v6l-5-2M32 17l-6-5M32 17l6-5M32 47l-6 5M32 47l6 5M47 32h6l-2-5M47 32l2 5M17 26l-5 2M17 38l-5-2"/>
+    </svg>
+  </div>
+  <div class="hologram h-wrench" data-depth="2">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 40.3 40.3 14.7a6 6 0 0 1 8.5 8.5L28 38.1l4.2 4.2 8.4-8.4a6 6 0 0 1 8.5 8.5l-9.3 9.3-12.7 12.7a4 4 0 0 1-5.7-5.7L30 46.8l-4.2-4.2-6.5 6.5a4 4 0 0 1-5.7-5.7Z"/>
+    </svg>
+  </div>
+  <div class="hologram h-bolt" data-depth="3">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M36 6 16 36h14l-4 22 20-30H32l4-22Z"/>
+    </svg>
+  </div>
+  <div class="hologram h-circuit" data-depth="4">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="2"/><circle cx="52" cy="12" r="2"/>
+      <circle cx="12" cy="52" r="2"/><circle cx="52" cy="52" r="2"/>
+      <circle cx="32" cy="32" r="3"/>
+      <path d="M12 12h14l6 20H14a2 2 0 0 0-2 2v6M52 12H38l-6 20H50a2 2 0 0 1 2 2v6M12 52h14l6-16M52 52H38l-6-16"/>
+    </svg>
+  </div>
+</div>
+
 <!-- ===== NAVEGACIÓN ===== -->
 <nav id="nav">
   <a href="#inicio" class="active">Inicio</a>
@@ -81,7 +124,7 @@
       </div>
       <div class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <div><b>Fecha</b>10 / 08 / 2026</div>
+        <div><b>Fecha</b>29 / 08 / 26</div>
       </div>
     </div>
   </div>
@@ -106,6 +149,7 @@
       <div class="answer">
         El programa presentado fue la <strong>Ingeniería Mecatrónica</strong>, una disciplina que integra la <strong>mecánica</strong>, la <strong>electrónica</strong>, la <strong>teoría de control</strong> y la <strong>informática</strong> con el objetivo de diseñar y fabricar sistemas inteligentes y automatizados, como robots, máquinas y procesos industriales.
       </div>
+      <div class="drawing has-img" id="img1"><img src="img/mecatronica1.png" alt="Mecatrónica 1"></div>
     </div>
 
     <div class="card">
@@ -113,6 +157,7 @@
       <div class="answer">
         Su propósito principal es <strong>combinar la mecánica con la electrónica, el control y el software</strong> para crear <strong>sistemas inteligentes y automatizados</strong>. Permite desarrollar robots, líneas de producción automatizadas, vehículos autónomos, prótesis biónicas y soluciones de <strong>Industria 4.0</strong> que hacen procesos más eficientes, seguros y precisos.
       </div>
+      <div class="drawing has-img" id="img2"><img src="img/mecatronica2.png" alt="Mecatrónica 2"></div>
     </div>
 
     <div class="card">
@@ -122,6 +167,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Formación <strong>multidisciplinaria</strong> que se adapta a muchas industrias.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Permite crear <strong>proyectos innovadores e impactantes</strong>: robots, drones y sistemas inteligentes.</span></li>
       </ul>
+      <div class="drawing has-img" id="img3"><img src="img/mecatronica3.png" alt="Mecatrónica 3"></div>
     </div>
 
     <div class="card">
@@ -129,6 +175,7 @@
       <div class="answer">
         Puede ayudar a solucionar problemas como la <strong>falta de competitividad industrial</strong>, la <strong>seguridad laboral</strong> (reemplazando tareas peligrosas con robots), la <strong>optimización de recursos y energías renovables</strong>, la <strong>movilidad</strong> mediante vehículos autónomos y el <strong>acceso a tecnología médica</strong> como prótesis y equipos de rehabilitación.
       </div>
+      <div class="drawing" id="img4"><span class="ph">Imagen 4</span></div>
     </div>
 
     <div class="card">
@@ -136,6 +183,7 @@
       <div class="answer">
         El aspecto que más me llamó la atención fue la <strong>robótica y la automatización</strong>, porque es impresionante ver cómo se combinan mecánica, electrónica y programación para crear máquinas inteligentes. Sin embargo, me di cuenta de que ese trabajo práctico con <strong>mecanismos y sistemas de control</strong> no es el área en la que realmente me visualizo para mi futuro profesional.
       </div>
+      <div class="drawing" id="img5"><span class="ph">Imagen 5</span></div>
     </div>
   </section>
 
@@ -171,6 +219,7 @@
       <div class="answer">
         Considero que ya poseo <strong>pensamiento lógico, interés por la tecnología y la robótica, capacidad de razonamiento matemático y curiosidad</strong>. Además tengo facilidad para <strong>trabajar en equipo</strong> y ganas de aprender a construir y programar máquinas que resuelvan problemas reales.
       </div>
+      <div class="drawing" id="img6"><span class="ph">Imagen 6</span></div>
     </div>
 
     <div class="card">
@@ -178,6 +227,7 @@
       <div class="answer">
         Debo fortalecer mis conocimientos en <strong>programación avanzada</strong>, profundizar en <strong>electrónica y diseño mecánico</strong>, y aprender a utilizar <strong>software de simulación y modelado 3D</strong>. También quiero desarrollar más mi <strong>capacidad de innovación</strong> y el trabajo en proyectos multidisciplinarios.
       </div>
+      <div class="drawing" id="img7"><span class="ph">Imagen 7</span></div>
     </div>
 
     <div class="card">
@@ -190,6 +240,7 @@
       <div class="answer">
         Me identifico en un nivel <strong>2</strong> con el perfil. Si bien me interesa la programación y algo de la tecnología, la mecatrónica se enfoca mucho en la <strong>mecánica, la electrónica y el control industrial</strong>, que no son las áreas que más se alinean con mis intereses y habilidades actuales.
       </div>
+      <div class="drawing" id="img8"><span class="ph">Imagen 8</span></div>
     </div>
   </section>
 
@@ -214,6 +265,7 @@
       <p style="margin-top:14px;color:var(--muted);font-size:.9rem">
         También podría trabajar en: <strong>sistemas automotrices, aeroespacial, biomedicina, energías renovables</strong> y <strong>desarrollo de sistemas embebidos</strong>.
       </p>
+      <div class="drawing" id="img9"><span class="ph">Imagen 9</span></div>
     </div>
 
     <div class="card">
@@ -221,6 +273,7 @@
       <div class="answer">
         El área que más me interesa es la <strong>robótica</strong>, porque me permite <strong>diseñar, construir y programar máquinas inteligentes</strong> capaces de realizar tareas complejas. Me fascina ver cómo un conjunto de piezas mecánicas, sensores y código puede convertirse en un <strong>robot con comportamiento autónomo</strong>.
       </div>
+      <div class="drawing" id="img10"><span class="ph">Imagen 10</span></div>
     </div>
 
     <div class="card">
@@ -228,6 +281,7 @@
       <div class="answer">
         No tengo un proyecto concreto en esta área. Si tuviera que elegir, tal vez un pequeño prototipo de <strong>automatización</strong>, pero lo reconozco como una actividad de interés general y no como el rumbo que me gustaría tomar como profesional, ya que me inclino más hacia otros campos.
       </div>
+      <div class="drawing" id="img11"><span class="ph">Imagen 11</span></div>
     </div>
 
     <div class="card">
@@ -235,6 +289,7 @@
       <div class="answer">
         La Ingeniería Mecatrónica puede aportar al desarrollo de Colombia mediante la <strong>modernización de la industria</strong>, la <strong>automatización de procesos</strong> que aumente la productividad, el desarrollo de <strong>tecnología agrícola</strong>, soluciones de <strong>energías renovables</strong> y sistemas de <strong>salud con robótica médica</strong>. Esto genera empleo calificado y hace al país más <strong>competitivo e innovador</strong>.
       </div>
+      <div class="drawing" id="img12"><span class="ph">Imagen 12</span></div>
     </div>
   </section>
 
@@ -260,6 +315,7 @@
       <div class="answer">
         No, esta carrera no es la que quiero. Aunque respeto la mecatrónica y entiendo su importancia en la ingeniería, el enfoque en <strong>mecánica y control industrial</strong> no es lo que realmente me apasiona, así que preferiría orientar mi futuro profesional hacia otra área que sí se ajuste mejor a mis intereses.
       </div>
+      <div class="drawing" id="img13"><span class="ph">Imagen 13</span></div>
     </div>
 
     <div class="card">
@@ -267,6 +323,7 @@
       <div class="answer">
         Encuentro poca relación con mis intereses. Si bien me gusta la <strong>tecnología y la programación</strong>, esa es solo una parte de la mecatrónica, que en realidad se apoya mucho en la <strong>mecánica y la electrónica de control</strong>. Esas áreas no son las que más me atraen, por lo que esta carrera no encaja del todo con lo que realmente quiero hacer.
       </div>
+      <div class="drawing" id="img14"><span class="ph">Imagen 14</span></div>
     </div>
 
     <div class="card">
@@ -275,6 +332,7 @@
         «Después de conocer la Ingeniería Mecatrónica, reconozco que es una carrera muy importante para la industria y con gran futuro, pero considero que no es la que más se ajusta a mis intereses, ya que mi mayor afinidad está en otras áreas de la tecnología.»
         <span class="author">— Justin David Mendoza Ortiz</span>
       </div>
+      <div class="drawing" id="img15"><span class="ph">Imagen 15</span></div>
     </div>
 
     <div class="card">
@@ -299,6 +357,7 @@
         <div class="bar-top"><span>Aporte que puede realizar a la sociedad</span><b>2 / 5</b></div>
         <div class="bar-track"><div class="bar-fill"></div></div>
       </div>
+      <div class="drawing" id="img16"><span class="ph">Imagen 16</span></div>
     </div>
   </section>
 
@@ -307,7 +366,7 @@
 <footer>
   <div class="f-rule"></div>
   <div class="f-name">Justin David Mendoza Ortiz</div>
-  <p class="f-sub">Taller Base de Orientación Vocacional · Ingeniería Mecatrónica · 10/08/2026</p>
+  <p class="f-sub">Taller Base de Orientación Vocacional · Ingeniería Mecatrónica · 29/08/26</p>
 </footer>
 
 <button id="to-top" aria-label="Volver arriba">&#8593;</button>
